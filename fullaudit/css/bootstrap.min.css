@@ -1042,7 +1042,7 @@ body {
 	font-size:14px;
 	line-height:1.42857143;
 	color:#333;
-	background-color:#61858D
+	background-color:#789BA0
 }
 button,input,select,textarea {
 	font-family:inherit;
@@ -1050,11 +1050,11 @@ button,input,select,textarea {
 	line-height:inherit
 }
 a {
-	color:#aeb5b7;
+	color:#616a6b;
 	text-decoration:none
 }
 a:focus,a:hover {
-	color:#aeb5b7;
+	color:#616a6b;
 	text-decoration:underline
 }
 a:focus {
