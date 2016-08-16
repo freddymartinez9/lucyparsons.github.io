@@ -42,18 +42,13 @@ function init_table(options) {
 }
 
 function Linkify(inputText) {
-    console.log("called!")
     //URLs starting with http://, https://, or ftp://
     var replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
     var replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
 
-    //URLs starting with www. (without // before it, or it'd re-link the ones done above)
-    var replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    var replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
-
-    //Change email addresses to mailto:: links
-    var replacePattern3 = /(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/gim;
-    var replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
+    //return pdf file to http tag, example 14425.pdf
+    //var replacePattern3 = /([0-9]{0,5})/gim;
+    //var replacedText = replacedText.replace(replacePattern3, '<a href="https://github.com/lucyparsons/1505analysis/blob/master/singlepdfs/'+replacePattern3 +'.pdf></a>');
 
     return replacedText
 }
