@@ -25,11 +25,11 @@ function init_table(options) {
 
             for (row_id = 1; row_id < csv_data.length; row_id++) {
                 var row_html = "<tr>";
-
-                for (col_id = 0; col_id < csv_data[row_id].length; col_id++) {
+  		csv_data[row_id][6] = linkpdf(csv_data[row_id][6]);	
+                csv_data[row_id][13] = linkify(csv_data[row_id][13]);
+		for (col_id = 0; col_id < csv_data[row_id].length; col_id++) {
                     row_html += "<td>" + csv_data[row_id][col_id] + "</td>";
                 }
-		row_html= Linkify(row_html);
                 row_html += "</tr>";
                 $('#my-table tbody').append(row_html);
             }
@@ -41,14 +41,15 @@ function init_table(options) {
         });
 }
 
-function Linkify(inputText) {
+function linkify(inputText) {
     //URLs starting with http://, https://, or ftp://
     var replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
     var replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
-
-    //return pdf file to http tag, example 14425.pdf
-    //var replacePattern3 = /([0-9]{0,5})/gim;
-    //var replacedText = replacedText.replace(replacePattern3, '<a href="https://github.com/lucyparsons/1505analysis/blob/master/singlepdfs/'+replacePattern3 +'.pdf></a>');
-
     return replacedText
 }
+
+function linkpdf(inputText) {
+     var linkedText='<a href="https://github.com/lucyparsons/1505analysis/blob/master/singlepdfs/' + inputText + '">' + inputText + '</a>';
+     return linkedText
+}
+
