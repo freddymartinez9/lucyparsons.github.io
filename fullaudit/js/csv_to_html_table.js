@@ -44,7 +44,7 @@ function init_table(options) {
 function linkify(inputText) {
     //URLs starting with http://, https://, or ftp://
     var replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-    var replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
+    var replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">MuckRock Request</a>');
     return replacedText
 }
 
