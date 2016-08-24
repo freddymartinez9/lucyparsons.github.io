@@ -1,8 +1,8 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>{% if page.meta_title %}{{ page.meta_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-	<link rel="stylesheet" type="text/css" href="{{ site.url }}{{ site.baseurl }}/assets/css/styles_feeling_responsive.css" />
-	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/modernizr.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/styles_feeling_responsive.css" />
+	<script src="/assets/js/modernizr.min.js"></script>
 
 
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
@@ -30,8 +30,8 @@
 	<link type="text/plain" rel="author" href="{{ site.url }}{{ site.baseurl }}/humans.txt" />
 
 	{% if page.mediaplayer == true %}
-		<script src="{{ site.url }}{{ site.baseurl }}/assets/mediaelement_js/mediaelement-and-player.min.js"></script>
-		<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/mediaelement_js/mediaelementplayer.min.css" />
+		<script src="/assets/mediaelement_js/mediaelement-and-player.min.js"></script>
+		<link rel="stylesheet" href="/assets/mediaelement_js/mediaelementplayer.min.css" />
 	{% endif %}
 
 	{% unless page.style == NULL %}

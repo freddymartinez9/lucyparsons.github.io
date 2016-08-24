@@ -16,7 +16,7 @@ slogan: "Governments never lead; they follow progress."
 
 
 # The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
-description: "»Lucy Parsons Labs« is a charitable Chicago-based collaboration between data scientists, transparency activists, and technologists which focuses on the intersection of digital rights and on-the-streets issues."
+description: "Lucy Parsons Labs is a charitable Chicago-based collaboration between data scientists, transparency activists, and technologists which focuses on the intersection of digital rights and on-the-streets issues."
 
 # Main author of the website
 # See > authors.yml
@@ -29,7 +29,7 @@ baseurl: ''
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages
-improve_content: https://github.com/lucyparsons/lucyparsons.github.io
+improve_content: ''
 
 # This URL points directly to the images directory making
 # things easier to link to images in posts and templates. It needs a slash at the end.
@@ -37,7 +37,7 @@ improve_content: https://github.com/lucyparsons/lucyparsons.github.io
 # Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
-urlimg: 'https://www.lucyparsonslabs.com/images/'
+urlimg: '/images/'
 
 
 # Logo size is 600x80 pixels
@@ -72,7 +72,7 @@ exclude:
     - LICENSE
     - README.md
     - INSTALL.md
-
+    - Rakefile
 
 # The language setting is used in /includes/header.html for html-settings
 language: "en"

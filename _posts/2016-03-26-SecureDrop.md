@@ -16,7 +16,7 @@ tags:
 #
 header: no
 image: 
- thumb: "thumbs/black-rose.jpg"
+ thumb: "thumbs/blackrose.jpg"
 ---
 
 SecureDrop is an _open-source_ whistleblower platform built on anonymity and strong encryption to protect data and the identity of sources. Lucy Parsons Labs has built an instance of SecureDrop that we are naming **"Black Rose"** and are proud to announce that it is now live. SecureDrop relies on several excellent technical projects and is completely segmented from other infrastructure that LPL uses. Since our servers are running as a Tor Hidden Service, submissions will not be tied to any personal information including IP addresses, names, or physical locations. 
