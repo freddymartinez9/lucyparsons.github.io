@@ -1,37 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Lucy Parsons Labs: 1505 Analysis</title>
-    <meta name="author" content="Lucy Parsons Labs">
-    <meta content="1505 data" />
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container-fluid">
-
-      <h1>The Narcotics Audit</h1>
-	<h2>Five Years and Counting...</h2>
-<br>
-<p>Since 2015, Lucy Parsons Labs has obtained approximately six hundred checks related to the Chicago Police Department's use of civil asset forfeiture. This page contains a searchable and sortable repository of these records, as well as all the checks we've obtained since 2009. There are links to the Freedom of Information Act (FOIA) requests, the results of each request, and the check amounts. We also invite you to read our full investigation into CPD's use of civil asset forfeiture in the <a href="link to article">Chicago Reader</a>.</p> 
-<p>Our investigation found that the majority of the civil asset forfeiture funds (known as the "1505" fund) went to pay for the everyday prosecution of the War on Drugs. Alarmingly, the 1505 fund has been used to purchase a large portion of the Chicago Police Department's surveillance equipment. This includes controversial equipment such as IMSI catchers (commonly known as Stingrays), Automatic License Plate Readers, "blue light cameras" (or PODs), and PenLINK equipment. You can find surveillance equipment by sorting the categories tab.</p>
-<p> The Chicago Police Department collected between $4.7 million and $9.3 million annually from 2009 to 2015. Between January 2010 and March 2016, $16 million, or about 80 percent of these larger payments, was spent on the day-to-day operations of the Bureau of Organized Crime. In 2015, the Bureau of Organized Crime received $77 million in its official budget. That year's additional forfeiture income was $4.7 million, nearly 6 percent of its total budget. Yet the forfeiture fund was already flush with cash from previous years: at the end of October 2015, the bureau had more than $17 million in its forfeiture checking and savings accounts. An <a href="https://github.com/lucyparsons/1505analysis/blob/master/MARTINEZv.CPD-RESPONSIVE%20RECORDS1505AUDIT.pdf">internal CPD audit (PDF)</a> obtained by Lucy Parsons Labs breaks down some of BoC expenses by category. In 2010, $267,000 was used for equipment and tools, $28,000 for office supplies, and almost $1 million for telephonic equipment and services.</p>
-<p><b>Note:</b> There are unknowns in the data set due to liberal use of redactions by the Chicago Police's FOIA Department as well as unfulfilled requests. If you would like to submit an FOIA request for missing checks, find checks that have a missing requester name and send an email to <i></i>info AT lucyparsonslabs DOT com</i>. This audit began using records from 2009 to the present but it is our hope to continue this project into the future.</p> 
-<p> Explore the data below </p>
-
+<meta charset="utf-8">
 <style>
+
 circle,
 path {
   cursor: pointer;
@@ -46,13 +16,16 @@ circle {
                           padding: 3px 5px;
                           border: 1px solid black;
                           text-align: center;}
+
 html {
         font-family: sans-serif;
+        
 }
 </style>
-
+<body>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
+
 var margin = {top: 350, right: 480, bottom: 350, left: 480},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
@@ -106,7 +79,8 @@ function computeTextRotation(d) {
 }
 
 function mouseOverArc(d) {
-         d3.select(this).attr("stroke","black")
+                         d3.select(this).attr("stroke","black")
+                         
           tooltip.html(format_description(d));
           return tooltip.transition()
             .duration(50)
@@ -213,7 +187,9 @@ d3.json("output.json", function(error, root) {
     // When zooming in, arcs enter from the outside and exit to the inside.
     // Entering outside arcs start from the old layout.
     if (root === p) enterArc = outsideArc, exitArc = insideArc, outsideAngle.range([p.x, p.x + p.dx]);
+        
          var new_data=partition.nodes(root).slice(1)
+
     path = path.data(new_data, function(d) { return d.key; });
                  
          // When zooming out, arcs enter from the inside and exit to the outside.
@@ -235,11 +211,18 @@ d3.json("output.json", function(error, root) {
          .on("mouseout", mouseOutArc)
           .each(function(d) { this._current = enterArc(d); });
 
+                
       path.transition()
           .style("fill-opacity", 1)
           .attrTween("d", function(d) { return arcTween.call(this, updateArc(d)); });
+          
+      
+         
     });
+    
+    
          texts = texts.data(new_data, function(d) { return d.key; })
+         
          texts.exit()
                  .remove()    
     texts.enter()
@@ -287,36 +270,3 @@ function updateArc(d) {
 d3.select(self.frameElement).style("height", margin.top + margin.bottom + "px");
 
 </script> 
-
-      <div id='table-container'></div>
-
-    </div><!-- /.container -->
-
-    <footer class='footer'>
-      <div class='container-fluid'>
-        <hr />
-        <p class='pull-right'><a href='https://github.com/derekeder/csv-to-html-table'>CSV to HTML Table created  </a> by <a href='http://derekeder.com'>Derek Eder</a></p>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.csv.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap.js"></script>
-    <script src='js/csv_to_html_table.js'></script>
-
-    <script>
-      init_table({
-        csv_path: 'data/August23.csv',
-        element: 'table-container', 
-        allow_download: true,
-        csv_options: {separator: ',', delimiter: '"'},
-        datatables_options: {"paging": true}
-      });
-    </script>
-  </body>
-</html>
