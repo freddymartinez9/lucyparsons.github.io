@@ -25,6 +25,7 @@ d3.json("visualization/output.json", function(error, root) {
     .data(bla.leaves())
     .enter().append("div")
       .attr("class", "node")
+      .attr("data-toggle", "tooltip")
       .attr("title", function(d) { return d.data.name + "\n" + format(d.value); })
       .style("left", function(d) { return d.x0 + "%"; })
       .style("top", function(d) { return d.y0 + "%"; })
@@ -40,4 +41,9 @@ d3.json("visualization/output.json", function(error, root) {
     .append("div")
       .attr("class", "node-value")
       .text(function(d) { return format(d.value); });
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 });
+
