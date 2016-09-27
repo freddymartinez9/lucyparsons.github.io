@@ -4,7 +4,7 @@
   font: 10px sans-serif;
   position: relative;
   height: 600px;
-  margin: 30px 0;
+  margin-bottom: 30px;
 }
 
 .node {
@@ -24,4 +24,14 @@
   color: rgba(0,0,0,0.8);
   font-size: 9px;
   margin-top: 1px;
+}
+
+#graph-legend {
+  display: flex;
+}
+
+.legend {
+  flex: 1;
+  padding: 8px;
+  margin-bottom: 10px;
 }

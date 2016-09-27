@@ -43,6 +43,16 @@ d3.json("visualization/output.json", function(error, root) {
       .attr("class", "node-value")
       .text(function(d) { return format(d.value); });
 
+    d3.select('#graph-legend')
+      .selectAll('.legend')
+      .data(tree.children)
+      .enter().append('div')
+        .attr('class', 'legend')
+        .style("background", function(d) { return color(d.data.name); })
+        .text(function(d) {
+          return d.data.name;
+        })
+
     // Bootstrap tooltips have to be activated manually: https://getbootstrap.com/javascript/#tooltips-usage
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
