@@ -38,17 +38,28 @@
       <p>
         <b>Note:</b> There are unknowns in the data set due to liberal use of redactions by the Chicago Police's FOIA Department as well as unfulfilled requests. If you would like to submit an FOIA request for missing checks, find checks that have a missing requester name and send an email to <i></i>info AT lucyparsonslabs DOT com</i>. This audit began using records from 2009 to the present but it is our hope to continue this project into the future.
       </p>
-	</div>
-  <div id="graph-container"></div>
+  	</div>
+
+    <div id="graph-container"></div>
 
     <div id='table-container'></div>
 
-<!-- Bootstrap core JavaScript
-    ================================================== -->
+    <footer class='footer'>
+      <div class='container-fluid'>
+        <hr />
+        <p class='pull-right'>
+          <a href='https://github.com/derekeder/csv-to-html-table'>CSV to HTML Table created  </a> by <a href='http://derekeder.com'>Derek Eder</a>
+        </p>
+      </div>
+    </footer>
+
     <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- D3 and custom drawing code. -->
     <script src="//d3js.org/d3.v4.min.js"></script>
     <script src="js/draw_treemap.js"></script>
 
+    <!-- JQuery and all the stuff wie apparently need to draw the table. -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.csv.min.js"></script>
@@ -56,6 +67,7 @@
     <script src="js/dataTables.bootstrap.js"></script>
     <script src='js/csv_to_html_table.js'></script>
 
+    <!-- Actually draw the table -->
     <script>
       init_table({
         csv_path: 'data/1505Export.csv',
@@ -65,14 +77,5 @@
         datatables_options: {"paging": true}
       });
     </script>
-
-    <footer class='footer'>
-
-  <div class='container-fluid'>
-        <hr />
-        <p class='pull-right'><a href='https://github.com/derekeder/csv-to-html-table'>CSV to HTML Table created  </a> by <a href='http://derekeder.com'>Derek Eder</a></p>
-      </div>
-    </footer>
-
-</body>
+  </body>
 </html>
