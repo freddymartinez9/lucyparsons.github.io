@@ -27,7 +27,7 @@
                     "size": 121172.4
                 },
                 {
-                    "name": "US Marshalls/CPD",
+                    "name": "US Marshals/CPD",
                     "size": 5267.68
                 },
                 {
@@ -59,7 +59,7 @@
                     "size": 37400.0
                 }
             ],
-            "name": "unknown"
+            "name": "Unknown"
         },
      {
             "children": [
@@ -101,7 +101,7 @@
                     "size": 878317.5700000001
                 }
             ],
-            "name": "surveillance"
+            "name": "Surveillance"
         },
         {
             "children": [
@@ -138,7 +138,7 @@
                     "size": 20100.0
                 },
                 {
-                    "name": "Dare Programming",
+                    "name": "DARE Programming",
                     "size": 20000.0
                 },
                 {
@@ -198,8 +198,8 @@
                     "size": 389823.46
                 }
             ],
-            "name": "routine"
+            "name": "Routine"
         }
     ],
-    "name": "cpd"
+    "name": "CPD Expenditures"
 }
